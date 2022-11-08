@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.plb.luyi.mapper.UserMapper">
+    <!--  添加用户信息，注册  -->
+
+    <insert id="insertUser" >
+        INSERT INTO luyi.user(username, phonenumber, password, password_past, ip, avatar, birthday, regtime)
+        VALUES (#{username},#{phonenumber},#{password},#{password},#{ip},#{avatar},#{birthday},now())
+    </insert>
+
+
+</mapper>
