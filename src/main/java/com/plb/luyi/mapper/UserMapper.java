@@ -16,15 +16,15 @@ public interface UserMapper {
     /* 删除,用户注销映射*/
     Integer deleteUser(String phoneNumber);
     /* 更新,修改用户信息映射 */
-    Integer updateUserInfo(String username, String avatar, Date birthday);
+    Integer updateUserInfo(String username, String avatar, Date birthday,String phonenumber);
     /* 更新,更改密码映射 */
-    Integer updateUserPassword(String username ,String password);
-    /* 更新,更改用户IP */
+    Integer updateUserPassword(String phonenumber ,String password,String password_past,String username);
+    /* 更新,更改用户IP映射 */
     Integer updateIP(String username,String ip);
     /* 查询,根据用户名和密码查找用户映射 */
-    User findUserByUsername(String username,String password);
+    User findUserByUsername(String username);
     /* 查询,根据手机号和密码查找用户映射 */
-    User findUserByPhoneNumber(String phoneNumber,String password);
-    /* 查询,根据手机号查找密码 */
-    User findIPasswordByPhoneNumber(String phoneNumber);
+    User findUserByPhoneNumber(String phoneNumber);
+    /* 查询,根据手机号查找密码映射 */
+    String findPasswordByPhoneNumber(String phonenumber);
 }

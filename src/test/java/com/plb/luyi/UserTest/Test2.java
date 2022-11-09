@@ -20,4 +20,42 @@ public class Test2 {
         User user =new User("plb","123456","15843573170","武汉","00",new Date());
         userService.reg(user);
     }
+    @Test
+    public void delete(){
+        userService.deleteUser("15843573170");
+    }
+
+    @Test
+    public void updateInfo(){
+        User user =new User("plb00","123456","15843573170","武汉","0000",new Date());
+        userService.updateUserInfo(user);
+    }
+
+    @Test
+    public void updatePw(){
+        User user = new User("plb00","12345678","15843573170","武汉","0000",new Date());
+        user.setPassword_past(userService.getPassword(user.getPhoneNumber()));
+        userService.updatePassword(user);
+    }
+
+    @Test
+    public void getPw(){
+        String Pw ="15843573170";
+        System.out.println( userService.getPassword(Pw));
+
+    }
+
+    @Test
+    public void updateIp(){
+        userService.updateIp("plb00","吉林");
+    }
+
+    @Test
+    public void getUser(){
+//       User user = userService.getUserInfoByUsername("plb00");
+//       System.out.println( user);
+//       user = userService.getUserInfoByPhoneNumber("15843573170");
+//       System.out.println(user);
+    }
+
 }

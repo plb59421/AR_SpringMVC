@@ -17,15 +17,15 @@ public interface IUserService {
     /* 删除用户业务 */
     void deleteUser(String phoneNumber);
     /* 修改密码业务 */
-    void updatePassword(String phoneNumber,String password);
+    void updatePassword(User user);
     /* 修改个人信息业务 */
-    void updateUserInfo(String username, String avatar, Date birthday);
+    void updateUserInfo(User user);
     /* 修改ip地址业务 */
-    void updateIp();
-    /* 用户名登录业务 */
-    List<User> getUserInfoByUsername(String username,String password);
-    /* 手机号登录业务 */
-    List<User> getUserInfoByPhoneNumber(String phoneNumber,String password);
-    /* 忘记密码，找回密码业务 */
+    void updateIp(String username ,String ip);
+    /* 根据用户名查找用户业务 */
+    User getUserInfoByUsername(String username,String password);
+    /* 根据手机号查找用户业务 */
+    User getUserInfoByPhoneNumber(String phoneNumber,String password);
+    /* 根据手机号查找密码业务 */
     String getPassword(String phoneNumber);
 }

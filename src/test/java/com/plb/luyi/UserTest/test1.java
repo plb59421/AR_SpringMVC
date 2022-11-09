@@ -25,4 +25,11 @@ public class test1 {
         Integer num = userMapper.insertUser("plb","15843573170","123456","武汉","00",new Date());
         System.out.println(num);
     }
+
+    @Test
+    public void delete(){
+        Integer num = userMapper.deleteUser("15843573170");
+        System.out.println(num);
+    }
+
 }

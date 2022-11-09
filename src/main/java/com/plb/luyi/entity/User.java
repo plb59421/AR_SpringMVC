@@ -1,6 +1,5 @@
 package com.plb.luyi.entity;
 
-import java.awt.*;
 import java.util.Date;
 import java.util.Objects;
 
@@ -37,9 +36,18 @@ public class User {
         this.avatar = avatar;
         this.birthday = birthday;
         this.regTime = new Date();
-
     }
 
+    public User(Long uid,String username, String phoneNumber, String password,String password_past, String ip, String avatar, Date birthday,Date regTime) {
+        this.username = username;
+        this.password = password;
+        this.password_past =password_past;
+        this.phoneNumber = phoneNumber;
+        this.ip = ip;
+        this.avatar = avatar;
+        this.birthday = birthday;
+        this.regTime = regTime;
+    }
     public String getUsername() {
         return username;
     }

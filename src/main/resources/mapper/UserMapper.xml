@@ -10,5 +10,40 @@
         VALUES (#{username},#{phonenumber},#{password},#{password},#{ip},#{avatar},#{birthday},now())
     </insert>
 
+    <!--  删除用户信息，注销用户  -->
+    <delete id="deleteUser">
+        DELETE  FROM luyi.user WHERE phonenumber = #{phonenumber}
+    </delete>
+
+    <!--  更新用户信息, 个人信息  -->
+    <update id="updateUserInfo">
+        UPDATE luyi.user SET username=#{username} , avatar=#{avatar} , birthday=#{birthday}
+        WHERE phonenumber = #{phonenumber}
+    </update>
+
+    <!--  更新用户信息, 手机号和密码  -->
+    <update id="updateUserPassword">
+        UPDATE luyi.user SET phonenumber=#{phonenumber},password=#{password},password_past=#{password_past}
+        WHERE username =#{username}
+    </update>
+
+    <!--  更新ip  -->
+    <update id="updateIP">
+        UPDATE luyi.user SET ip=#{ip}
+        WHERE username=#{username}
+    </update>
+
+    <!--  根据用户名找User  -->
+    <select id="findUserByUsername" resultType="com.plb.luyi.entity.User">
+        SELECT * FROM luyi.user WHERE username=#{username}
+    </select>
+    <!--  根据电话号查找User  -->
+    <select id="findUserByPhoneNumber" resultType="com.plb.luyi.entity.User">
+        SELECT * FROM luyi.user WHERE phonenumber=#{phoneunmber}
+    </select>
+    <!--  查找密码  -->
+    <select id="findPasswordByPhoneNumber" resultType="String">
+        SELECT password FROM luyi.user WHERE phonenumber=#{phonenumber}
+    </select>
 
 </mapper>
