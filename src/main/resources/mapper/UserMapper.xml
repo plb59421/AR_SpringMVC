@@ -37,13 +37,18 @@
     <select id="findUserByUsername" resultType="com.plb.luyi.entity.User">
         SELECT * FROM luyi.user WHERE username=#{username}
     </select>
+
     <!--  根据电话号查找User  -->
     <select id="findUserByPhoneNumber" resultType="com.plb.luyi.entity.User">
         SELECT * FROM luyi.user WHERE phonenumber=#{phoneunmber}
     </select>
+
     <!--  查找密码  -->
     <select id="findPasswordByPhoneNumber" resultType="String">
         SELECT password FROM luyi.user WHERE phonenumber=#{phonenumber}
+    </select>
+    <select id="findPasswordByUsername" resultType="String">
+        SELECT password FROM luyi.user WHERE username=#{username}
     </select>
 
 </mapper>

@@ -27,5 +27,7 @@ public interface IUserService {
     /* 根据手机号查找用户业务 */
     User getUserInfoByPhoneNumber(String phoneNumber,String password);
     /* 根据手机号查找密码业务 */
-    String getPassword(String phoneNumber);
+    String getPasswordByNumber(String phoneNumber);
+    /**/
+    String getPasswordByName(String username);
 }

@@ -3,7 +3,9 @@ package com.plb.luyi.mapper;
 import com.plb.luyi.entity.User;
 import org.apache.ibatis.annotations.Mapper;
 
+import javax.jws.soap.SOAPBinding;
 import java.util.Date;
+import java.util.List;
 
 @Mapper
 public interface UserMapper {
@@ -27,4 +29,7 @@ public interface UserMapper {
     User findUserByPhoneNumber(String phoneNumber);
     /* 查询,根据手机号查找密码映射 */
     String findPasswordByPhoneNumber(String phonenumber);
+    /* 查询,根据用户名查找密码映射*/
+    String findPasswordByUsername(String username);
+
 }
